@@ -1,4 +1,3 @@
-/*
 Copyright 2021 The Flux authors
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +18,11 @@ package controllers
 import (
 	"fmt"
 
+<<<<<<< HEAD
 	sourcev1 "github.com/fluxcd/source-controller/api/v1beta1"
+=======
+	sourcev1 "github.com/fluxcd/source-controller/api/v1beta2"
+>>>>>>> main
 	. "github.com/onsi/gomega"
 	"github.com/onsi/gomega/types"
 )
@@ -54,6 +57,12 @@ func (m matchArtifact) Match(actual interface{}) (success bool, err error) {
 	if ok, err = Equal(m.expected.Checksum).Match(actualArtifact.Checksum); !ok {
 		return ok, err
 	}
+<<<<<<< HEAD
+=======
+	if ok, err = Equal(m.expected.Size).Match(actualArtifact.Size); !ok {
+		return ok, err
+	}
+>>>>>>> main
 
 	return ok, err
 }
